@@ -1,0 +1,200 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --warning-color: #f39c12;
+    --text-color: #34495e;
+    --background-color: #ecf0f1;
+    --accent-color: #9b59b6;
+    --light-gray: #f4f4f4;
+    --dark-gray: #2c3e50;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.gma-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gma-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.gma-materiais {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.gma-material {
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.gma-material:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gma-material-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gma-material:hover .gma-material-image {
+    transform: scale(1.05);
+}
+
+.gma-material-content {
+    padding: 20px;
+}
+
+.gma-copy {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.gma-status {
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.gma-status-aprovado { color: var(--secondary-color); }
+.gma-status-reprovado { color: var(--danger-color); }
+.gma-status-pendente { color: var(--warning-color); }
+
+.gma-acoes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.gma-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.gma-button:active {
+    transform: scale(0.98);
+}
+
+.gma-button-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.gma-button-primary:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
+}
+
+.gma-button-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.gma-button-secondary:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
+}
+
+.gma-aprovar { background-color: var(--secondary-color); color: white; }
+.gma-reprovar { background-color: var(--danger-color); color: white; }
+.gma-editar { background-color: var(--primary-color); color: white; }
+
+.gma-edicao {
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.gma-edicao label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.gma-edicao textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    resize: vertical;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+    margin-bottom: 15px;
+}
+
+.gma-edicao textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.gma-edicao button {
+    margin-right: 10px;
+}
+
+.gma-button-primary::before {
+    content: '\f055'; /* Ícone de "plus" do Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+    margin-right: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .gma-materiais {
+        grid-template-columns: 1fr;
+    }
+    
+    .gma-title {
+        font-size: 2rem;
+    }
+    
+    .gma-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

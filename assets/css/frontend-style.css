@@ -1,0 +1,120 @@
+/* Reset e estilos base */
+.meu-plugin-container * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.meu-plugin-container {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Tipografia */
+.meu-plugin-container h1, .meu-plugin-container h2, .meu-plugin-container h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.meu-plugin-container h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.meu-plugin-container p {
+    margin-bottom: 15px;
+}
+
+/* Botões */
+.meu-plugin-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.meu-plugin-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Layout Responsivo */
+.meu-plugin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Cards */
+.meu-plugin-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.meu-plugin-card:hover {
+    transform: translateY(-5px);
+}
+
+.meu-plugin-card img {
+    width: 100%;
+    height: auto;
+}
+
+.meu-plugin-card-content {
+    padding: 20px;
+}
+
+/* Formulários */
+.meu-plugin-form input[type="text"],
+.meu-plugin-form input[type="email"],
+.meu-plugin-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.meu-plugin-form input[type="submit"] {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.meu-plugin-form input[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+/* Media Queries para Responsividade */
+@media screen and (max-width: 768px) {
+    .meu-plugin-container {
+        padding: 10px;
+    }
+
+    .meu-plugin-container h1 {
+        font-size: 2em;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.meu-plugin-fade-in {
+    animation: fadeIn 1s ease-in;
+}
